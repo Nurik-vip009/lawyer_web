@@ -40,8 +40,17 @@ header {
     font-size: 1.55rem;
     font-weight: bold;
     color: var(--light-gold);
+    display: flex;
+    gap: 5px;
 }
-
+.logo img {
+    width: 35px;
+    height: 35px;
+}
+.phone{
+    text-decoration: none;
+    color: white;
+}
 nav.desktop-nav { display: block; }
 nav.desktop-nav ul {
     display: flex;
@@ -98,7 +107,6 @@ nav.desktop-nav a:hover { color: var(--gold); }
     padding: 12px 40px;
 }
 
-/* Модальное окно (оставляем как было) */
 .modal {
     display: none;
     position: fixed;
@@ -130,12 +138,10 @@ nav.desktop-nav a:hover { color: var(--gold); }
     nav.desktop-nav     { display: none; }
     .burger-btn         { display: block; }
 
-    /* Скрываем кнопку консультации в header на мобильных */
     .btn-consult {
         display: none;
     }
 
-    /* На десктопе показываем кнопку в header */
     .btn-consult.desktop-only {
         display: block;
     }
@@ -144,7 +150,7 @@ nav.desktop-nav a:hover { color: var(--gold); }
         display: none;
     }
 }
-/* На всякий случай — чтобы кнопка в меню выглядела хорошо */
+
 .mobile-menu .btn-consult {
     background: var(--gold);
     color: var(--darker);
@@ -153,12 +159,21 @@ nav.desktop-nav a:hover { color: var(--gold); }
     font-weight: 600;
     cursor: pointer;
 }
+.menu-link{
+    text-decoration: none;
+    color: white;
+    gap: 25px;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    column-gap: 25px;
+}
 
 .mobile-menu .btn-consult:hover {
     background: var(--light-gold);
 }
 
-/* Hero */
 #hero {
     min-height: 90vh;
     background: linear-gradient(to bottom right, var(--dark), #1e293b);
@@ -240,7 +255,6 @@ h2 { text-align: center; font-size: clamp(1.9rem, 5vw, 3.2rem); margin-bottom: 3
     left: 0;
 }
 
-/* Модальное окно */
 .modal {
     display: none;
     position: fixed;
@@ -346,7 +360,6 @@ button[type="submit"] {
     left: 0;
 }
 
-/* Почему мы / Как работаем */
 .features-grid, .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -364,14 +377,12 @@ button[type="submit"] {
     color: var(--gold);
 }
 
-/* CTA */
 #cta {
     background: var(--dark);
     color: white;
     text-align: center;
 }
 
-/* Контакты */
 #contacts {
     background: #f8fafc;
 }
@@ -406,7 +417,6 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-/* Footer */
 footer {
     background: var(--darker);
     color: #94a3b8;
@@ -422,4 +432,68 @@ footer {
 
 .footer-links a:hover {
     color: var(--gold);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-load {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+.wave-reveal {
+    opacity: 0;
+    display: block;
+}
+
+.wave-reveal,
+.wave-reveal > * {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.wave-reveal.animate,
+.wave-reveal.animate > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-content .wave-reveal h1 {
+    transition-delay: 0.35s;
+}
+
+.hero-content .wave-reveal .lead {
+    transition-delay: 0.85s;
+}
+
+.hero-content .lead br {
+    display: none;
+}
+
+.hero-content {
+    opacity: 0;
+    animation: softFadeIn 1.4s 0.2s forwards;
+}
+
+@keyframes softFadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes subtleBreathe {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-3px); }
+}
+
+.wave-reveal.animate h1 {
+    animation: subtleBreathe 5s ease-in-out infinite 3s;
 }

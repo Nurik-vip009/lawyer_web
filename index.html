@@ -4,48 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Юридические услуги | Уголовные, гражданские и семейные дела</title>
+    <link rel="icon" href="logo/free-icon-justice-2652232.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="Профессиональная юридическая помощь по уголовным, гражданским и семейным делам. Быстро, конфиденциально, с сопровождением до результата."/>
 </head>
 <body>
 
-<header>
+<header class="animate-on-load">
     <div class="header-inner container">
-        <div class="logo">Правовая Защита</div>
+        <div class="logo"><img src="logo/free-icon-justice-2652232.png" alt=""> <h4>Правовая защита</h4></div>
 
         <div class="menu">
-            <a href="#services" class="menu-link">Услуги</a>
-            <a href="#why"     class="menu-link">Почему мы</a>
-            <a href="#process" class="menu-link">Как работаем</a>
-            <a href="#contacts" class="menu-link">Контакты</a>
+            <ul>
+                <li><a href="#services" class="menu-link">Услуги</a></li>
+                <li><a href="#why"     class="menu-link">Почему мы</a></li>
+                <li><a href="#process" class="menu-link">Как работаем</a></li>
+                <li><a href="#contacts" class="menu-link">Контакты</a></li>
+            </ul>
         </div>
+
         <div class="header-actions">
-            <!-- Кнопка консультации в header на мобильных НЕ показывается -->
-            <button class="btn-consult">Получить консультацию</button>
+            <button class="btn-consult modal-trigger">Получить консультацию</button>
             <button class="burger-btn" id="burgerBtn">☰</button>
         </div>
     </div>
 </header>
 
-<!-- Мобильное меню -->
 <div class="mobile-menu" id="mobileMenu">
+    <button class="btn-consult modal-trigger" style="margin-top:1rem; margin-bottom:3rem;">
+        Получить консультацию
+    </button>
+
     <a href="#services" class="menu-link">Услуги</a>
     <a href="#why"     class="menu-link">Почему мы</a>
     <a href="#process" class="menu-link">Как работаем</a>
     <a href="#contacts" class="menu-link">Контакты</a>
-
-    <!-- Кнопка консультации ТОЛЬКО здесь, в мобильном меню -->
-    <button class="btn-consult modal-trigger" style="margin-top:2.5rem; width:80%; max-width:340px; font-size:1.1rem; padding:14px 24px;">
-        Получить консультацию
-    </button>
 </div>
 
-<!-- Модальное окно консультации -->
+<!-- Модальное окно -->
 <div class="modal" id="consultModal">
     <div class="modal-content">
-        <span class="modal-close" id="closeModal">&times;</span>
+        <span class="modal-close" id="closeModal">×</span>
         <h2>Получить консультацию</h2>
-        <form class="modal-form" action="https://formsubmit.co/your@email.com" method="POST">
+        <form class="modal-form" action="https://formsubmit.co/t1005828@gmail.com" method="POST">
             <input type="text"   name="name"    placeholder="Ваше имя" required>
             <input type="tel"    name="phone"   placeholder="Телефон" required>
             <textarea name="message" placeholder="Кратко опишите вашу ситуацию..." required></textarea>
@@ -54,19 +55,22 @@
     </div>
 </div>
 
-<!-- Остальной контент остаётся без изменений -->
-<!-- hero, services, why, process, cta, contacts, footer -->
-
-<section id="hero">
+<section id="hero" class="animate-on-load">
     <div class="container">
         <div class="hero-content">
-            <h1>Юридические услуги по уголовным, гражданским и семейным делам</h1>
-            <p class="lead">Помогаем решить юридические вопросы быстро, понятно и безопасно</p>
+            <h1 class="wave-reveal">
+                Профессиональная юридическая помощь
+            </h1>
+
+            <p class="lead wave-reveal">
+                Защита по уголовным, гражданским и административным делам.<br>
+                Консультация — быстро и конфиденциально.
+            </p>
 
             <button class="btn-primary modal-trigger">Получить консультацию</button>
-            <a href="https://wa.me/79001234567?text=Здравствуйте! Хочу получить консультацию" class="btn-primary btn-whatsapp">Написать в WhatsApp</a>
+            <a href="https://wa.me/996509161126?text=Здравствуйте! Хочу получить консультацию" class="btn-primary btn-whatsapp">Написать в WhatsApp</a>
 
-            <a href="tel:+79001234567" class="phone">+7 (900) 123-45-67</a>
+            <a href="tel:+996509161126" class="phone">+996 509 161 126</a>
 
             <div class="advantages">
                 <div class="adv-item">🔒 Конфиденциальность</div>
@@ -77,10 +81,9 @@
     </div>
 </section>
 
-<section id="services">
+<section id="services" class="animate-on-load">
     <div class="container">
         <h2>Наши услуги</h2>
-
         <div class="services-grid">
             <div class="service-card">
                 <h3>Уголовные дела</h3>
@@ -100,23 +103,13 @@
                     <li>Защита прав потребителей</li>
                     <li>Жилищные споры</li>
                     <li>Наследственные дела</li>
+                    <li>Семейные споры</li>
                 </ul>
                 <a href="#contacts" class="btn-primary">Получить консультацию</a>
             </div>
 
             <div class="service-card">
-                <h3>Семейные споры</h3>
-                <ul>
-                    <li>Развод и раздел имущества</li>
-                    <li>Алименты</li>
-                    <li>Определение места жительства детей</li>
-                    <li>Лишение / ограничение родительских прав</li>
-                </ul>
-                <a href="#contacts" class="btn-primary">Получить консультацию</a>
-            </div>
-
-            <div class="service-card">
-                <h3>Прочие вопросы</h3>
+                <h3>Иные правовые вопросы</h3>
                 <ul>
                     <li>Подготовка договоров</li>
                     <li>Юридическое сопровождение бизнеса</li>
@@ -129,10 +122,9 @@
     </div>
 </section>
 
-<section id="why">
+<section id="why" class="animate-on-load">
     <div class="container">
         <h2>Почему выбирают нас</h2>
-
         <div class="features-grid">
             <div class="feature-item">
                 <div class="icon-placeholder">👤</div>
@@ -158,10 +150,9 @@
     </div>
 </section>
 
-<section id="process">
+<section id="process" class="animate-on-load">
     <div class="container">
         <h2>Как мы работаем</h2>
-
         <div class="steps-grid">
             <div class="step-item">
                 <div class="icon-placeholder">1</div>
@@ -187,10 +178,9 @@
     </div>
 </section>
 
-<section id="cta">
+<section id="cta" class="animate-on-load">
     <div class="container">
         <h2 style="color:white; margin-bottom:2rem;">Получите юридическую консультацию уже сегодня</h2>
-
         <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; max-width:700px; margin:0 auto;">
             <a href="#contacts" class="btn-primary" style="background:white; color:var(--dark);">Оставить заявку</a>
             <a href="tel:+79001234567" class="btn-primary">Позвонить</a>
@@ -199,26 +189,22 @@
     </div>
 </section>
 
-<section id="contacts">
+<section id="contacts" class="animate-on-load">
     <div class="container">
         <h2>Контакты</h2>
-
         <div class="contact-grid">
             <div>
                 <h3>Связаться с нами</h3>
                 <p style="margin:1.5rem 0;">
-                    <strong>Телефон:</strong> <a href="tel:+79001234567">+7 (900) 123-45-67</a><br>
-                    <strong>Email:</strong> <a href="mailto:info@pravo-zaschita.ru">info@pravo-zaschita.ru</a>
+                    <strong>Телефон:</strong> <a href="tel:+996509161126">+996 509 161 126</a><br>
+                    <strong>Email:</strong> <a href="mailto:t1005828@gmail.com">t1005828@gmail.com</a>
                 </p>
                 <p>WhatsApp и Telegram — по тому же номеру</p>
-
-                <!-- Здесь может быть iframe карты, если есть адрес -->
-                <!-- <iframe src="https://www.google.com/maps/embed?..." width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
             </div>
 
             <div>
                 <h3>Оставить заявку</h3>
-                <form action="https://formsubmit.co/your@email.com" method="POST">
+                <form action="https://formsubmit.co/t1005828@gmail.com" method="POST">
                     <input type="text" name="name" placeholder="Ваше имя" required/>
                     <input type="tel" name="phone" placeholder="Телефон" required/>
                     <textarea name="message" rows="5" placeholder="Опишите вашу ситуацию кратко" required></textarea>
@@ -229,7 +215,7 @@
     </div>
 </section>
 
-<footer>
+<footer class="animate-on-load">
     <div class="container">
         <p>© 2026 Правовая Защита. Все права защищены.</p>
         <div class="footer-links">
